@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>See ‘N’ Say Storymaker </title>
+	<!-- linking css files  -->
+	<link href="css/normalize.css" rel="stylesheet" />
+	<link href="css/main.css" rel="stylesheet" />
+</head>
+<body>
+	<header>
+		<!-- Heading of the webpage -->
+		<h1>See'N Say Story Maker</h1> 
+	</header>
+	<main>
+		<section>
+			<div id="content">
+				
+				<!--Category for nouns-->
+				<div class="category">
+					<!--Sub heading-->
+					<h2>Nouns</h2>
+				
+					<!--Image container-->
+					<div class="images">
+						<div>
+							<img src="./images/turkeynew.webp" height="50" width="50"/>
+						</div>
+						<div>
+							<img src="./images/momnew.jpg" height="50" width="50"/>
+						</div>
+						<div>
+							<img src="./images/dadnew.webp" height="50" width="50"/>
+						</div>
+						<div>
+							<img src="./images/dognew.jpg" height="50" width="50" />
+						</div>
+						<div>
+							<img src="./images/teachernew.jpg" height="50" width="50" />
+						</div>
+						
+					</div>
+					
+					<!-- Button to generate a random noun -->
+					<a href="javascript:;" onclick="randomMsg(1);"><img src="./images/button.png" alt="Noun" /></a>
+				</div>
+				
+				<!--Category for Verbs-->
+				<div class="category2">
+					<h2>Verbs</h2>
+					<div class="images">
+						<div>
+							<img src="./images/sat-on-new.jpg" height="50" width="50" />
+						</div>
+						<div>
+							<img src="./images/atenew.jpg" height="50" width="50"/>
+						</div>
+						<div>
+							<img src="./images/danced-withnew.jpg" height="50" width="50"/>
+						</div>
+						<div>
+							<img src="./images/saw new.jpg" height="50" width="50" />
+						</div>
+						<div>
+							<img src="./images/doent like new.png" height="50" width="50" />
+						</div>
+					</div>
+					<a href="javascript:;" onclick="randomMsg(2);"><img src="./images/button2.png" /></a>
+
+				</div>
+				
+				<!--Category for Adjectives-->
+				<div class="category3">
+					<h2>Adjectives</h2>
+					<div class="images">
+						<div>
+							<img src="./images/a-funny new.jpg" height="50" width="50" />
+						</div>
+						<div>
+							<img src="./images/ghostnew.webp" height="50" width="50"  />
+						</div>
+						<div>
+							<img src="./images/a goofy new.png" height="50" width="50"  />
+						</div>
+						<div>
+							<img src="./images/a slimy new.jpg" height="50" width="50" />
+						</div>
+						<div>
+							<img src="./images/a barking new.png" height="50" width="50" />
+						</div>
+					</div>
+					<a href="javascript:;" onclick="randomMsg(3);"><img src="./images/button3.png" alt="Adjective" /></a>
+
+				</div>
+				
+				<!--Category for Other-Nouns-->
+				<div class="category4">
+					<h2>Other-Nouns</h2>
+					<div class="images">
+						<div>
+							<img src="./images/goatnew.jpg" height="50" width="50" />
+						</div>
+						<div>
+							<img src="./images/monkeynew.jpg" height="50" width="50"/>
+						</div>
+						<div>
+							<img src="./images/fishnew.jpg" height="50" width="50"/>
+						</div>
+						<div>
+							<img src="./images/cownew.jpg" height="50" width="50" />
+						</div>
+						<div>
+							<img src="./images/frognew.jpg" height="50" width="50" />
+						</div>
+					</div>
+					<a href="javascript:;" onclick="randomMsg(4);"><img src="./images/button4.png" alt="The Other Noun" /></a>
+				</div>
+				
+				<!--Category for Place-->
+				<div class="category5">
+					<h2>Places</h2>
+					<div class="images">
+						<div>
+							<img src="./images/on the moon new.jpg" height="50" width="50" />
+						</div>
+						<div>
+							<img src="./images/on the chair new.jpg" height="50" width="50" />
+						</div>
+						<div>
+							<img src="./images/on the spaghetti new.jpg" height="50" width="50" />
+						</div>
+						<div>
+							<img src="./images/in my soup new.png" height="50" width="50" />
+						</div>
+						<div>
+							<img src="./images/on the grass new.jpg" height="50" width="50" />
+						</div>	
+					</div>
+					<a href="javascript:;" onclick="randomMsg(5);"><img src="./images/button5.png" /></a>
+				</div>
+			</div>
+		</section>
+		<!--End of Categories-->
+		<div class="extras">
+			<!--Extras-->
+			<section>
+				<div class="Column6">
+					<!--Button to playback the whole story-->
+					<a href="javascript:;" onclick="playBack();"><img src="./images/button.png" /></a>	
+					<a href="javascript:;" onclick="playBack();">Play Back</a>
+				</div>
+				<div class="Column7">
+					<!-- Button to generate a random story -->
+					<a href="javascript:;" onclick="randomMsg(6);"><img src="./images/button2.png" /></a>	
+					<a href="javascript:;" onclick="randomMsg(6);">Surprise</a>
+				</div>
+				<div class="Column8">
+					<!--Button to reset the whole story.-->
+					<a href="javascript:;" onclick="playback = [];"><img src="./images/button3.png" /></a>
+					<a href="javascript:;" onclick="playback = [];">Reset</a>
+				</div>
+	</main>
+	<script>
+		// words to be pronounced by the speech synthesis
+		var synth = window.speechSynthesis;
+		var Nounarray = ['the turkey', 'mom', 'dad', 'the dog', 'my teacher'];
+		var Verbarray = ['sat on', 'ate', 'danced with', 'saw', 'does not like'];
+		var Adjectivearray = ['a funny', 'a scary', 'a goofy', 'a slimy', 'a barking'];
+		var Noun2array = ['goat', 'monkey', 'fish', 'cow', 'frog'];
+		var Placearray = ['on the moon', 'on the chair', 'in my spagetti', 'in my soup', 'on the grass'];
+
+		var playback = [];
+	<!--Button to playback the whole story-->
+		function randomMsg(speak) {
+			var rand = Math.floor(Math.random() * 5);
+
+			switch (speak) {
+				case 1:
+					var text = Nounarray[rand];
+					break;
+				case 2:
+					var text = Verbarray[rand];
+					break;
+				case 3:
+					var text = Adjectivearray[rand];
+					break;
+				case 4:
+					var text = Noun2array[rand];
+					break;
+				case 5:
+					var text = Placearray[rand];
+					break;
+				default:
+			
+					var text = Nounarray[rand] + ' ' + Verbarray[rand] + ' ' + Adjectivearray[rand] + ' ' + Noun2array[rand] + ' ' + Noun2array[rand];
+					break;
+			}
+
+			playback.push(text);
+			var utterThis = new SpeechSynthesisUtterance(text);
+			synth.speak(utterThis);
+			return;
+		}
+			// For repeating the last made sentence
+		function playBack () {
+			for (var x = 0; x < playback.length; x++) {
+				var utterThis = new SpeechSynthesisUtterance(playback[x]);
+				synth.speak(utterThis);
+			}
+		}
+	</script>
+</body>
+</html>
